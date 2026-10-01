@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Workout Plan</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+        }
+
+        .page {
+            display: none;
+            min-height: 100vh;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* HOME PAGE */
+
+        #home {
+            min-height: 100vh;
+
+            background-image:
+                linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)),
+                url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=90");
+
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .home-title {
+            position: absolute;
+            top: 35px;
+            left: 35px;
+            font-size: 42px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .enter-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            background: white;
+            color: black;
+
+            border: none;
+            border-radius: 12px;
+
+            padding: 18px 55px;
+
+            font-size: 24px;
+            font-weight: bold;
+
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .enter-button:hover {
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+
+        /* WORKOUT PAGE */
+
+        .workout-page {
+            min-height: 100vh;
+            padding: 35px 20px;
+            background: #111;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 45px;
+        }
+
+        .days {
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .day-arrow {
+            width: 100%;
+            padding: 22px;
+
+            border: none;
+            border-radius: 15px;
+
+            background: #d00000;
+            color: white;
+
+            font-size: 24px;
+            font-weight: bold;
+
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .day-arrow:hover {
+            background: #ff0000;
+            transform: translateX(5px);
+        }
+
+        /* DAY PAGE */
+
+        .day-page {
+            min-height: 100vh;
+            padding: 30px 20px;
+            background: #111;
+        }
+
+        .day-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 30px;
+        }
+
+        .muscle-box {
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+            background: #222;
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .muscle-title {
+            color: #ff3333;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .exercise {
+            background: #333;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            font-size: 17px;
+        }
+
+        .back-button {
+            display: block;
+            margin: 30px auto 0 auto;
+
+            padding: 14px 35px;
+
+            border: none;
+            border-radius: 10px;
+
+            background: white;
+            color: black;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HOME -->
+
+    <section id="home" class="page active">
+
+        <div class="home-title">
+            Workout Plan
+        </div>
+
+        <button class="enter-button" onclick="showPage('workout')">
+            Enter
+        </button>
+
+    </section>
+
+
+    <!-- TODAY'S WORKOUT -->
+
+    <section id="workout" class="page workout-page">
+
+        <h1 class="page-title">
+            Today's Workout
+        </h1>
+
+<button class="back-button" onclick="showPage('home')">
+            Back
+        </button>
+
+        <div class="days">
+
+            <button class="day-arrow" onclick="showPage('day1')">
+                ➜ Day 1
+            </button>
+
+            <button class="day-arrow" onclick="showPage('day2')">
+                ➜ Day 2
+            </button>
+
+            <button class="day-arrow" onclick="showPage('day3')">
+                ➜ Day 3
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- DAY 1 -->
+
+    <section id="day1" class="page day-page">
+
+        <h1 class="day-title">
+            Day 1
+        </h1>
+
+        <!-- CHEST -->
+
+        <div class="muscle-box">
+
+            <h2 class="muscle-title">
+                Chest
+            </h2>
+
+            <div class="exercise">
+                Incline Dumbbell Press
+            </div>
+
+            <div class="exercise">
+                Cable Crossover High to Low
+            </div>
+
+            <div class="exercise">
+            cest fly 
+            </div>
+
+        </div>
+
+
+        <!-- ARMS -->
+
+        <div class="muscle-box">
+
+            <h2 class="muscle-title">
+                Arms
+            </h2>
+
+            <div class="exercise">
+                Behind the Back Cable Lateral Curl
+            </div>
+
+            <div class="exercise">
+                High Cable Bicep Curl
+            </div>
+
+            <div class="exercise">
+                Dumbbell Hammer Curl
+            </div>
+
+            <div class="exercise">
+                Triceps Pushdown
+            </div>
+
+            <div class="exercise">
+                Overhead Triceps Extension
+            </div>
+
+             <div class="exercise">
+                Hammer Curls
+            </div>
+
+        </div>
+
+
+        <!-- FOREARMS -->
+
+        <div class="muscle-box">
+
+            <h2 class="muscle-title">
+                Forearms
+            </h2>
+
+            <div class="exercise">
+                Wrist Curls
+            </div>
+
+            <div class="exercise">
+                Reverse Wrist Curls
+            </div>
+
+        </div>
+
+
+        <button class="back-button" onclick="showPage('workout')">
+            Back
+        </button>
+
+    </section>
+
+
+    <!-- DAY 2 -->
+
+    <section id="day2" class="page day-page">
+
+        <h1 class="day-title">
+            Day 2
+        </h1>
+
+        <!-- BACK -->
+
+        <div class="muscle-box">
+
+            <h2 class="muscle-title">
+                Back
+            </h2>
+
+            <div class="exercise">
+                Lat Pulldown
+            </div>
+
+            <div class="exercise">
+                Seated Cable Row
+            </div>
+
+        </div>
+
+
+        <!-- SHOULDERS -->
+
+        <div class="muscle-box">
+
+            <h2 class="muscle-title">
+                Shoulders
+            </h2>
+
+            <div class="exercise">
+                Cable Lateral Raises
+            </div>
+
+            <div class="exercise">
+                Front Raises
+            </div>
+
+            <div class="exercise">
+                Reverse Fly
+            </div>
+
+        </div>
+
+
+        <!-- TRAPS -->
+
+        <div class="muscle-box">
+
+            <h2 class="muscle-title">
+                Traps
+            </h2>
+
+            <div class="exercise">
+                Dumbbell Shrugs
+            </div>
+
+        </div>
+
+
+        <button class="back-button" onclick="showPage('workout')">
+            Back
+        </button>
+
+    </section>
+
+
+    <!-- DAY 3 -->
+
+    <section id="day3" class="page day-page">
+
+        <h1 class="day-title">
+            Day 3
+        </h1>
+
+        <!-- LEGS -->
+
+        <div class="muscle-box">
+
+            <h2 class="muscle-title">
+                Legs
+            </h2>
+
+            <div class="exercise">
+                Leg Extension
+            </div>
+
+            <div class="exercise">
+                Leg Curl
+            </div>
+
+            <div class="exercise">
+                Calf Raises
+            </div>
+
+        </div>
+
+
+        <button class="back-button" onclick="showPage('workout')">
+            Back
+        </button>
+
+    </section>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function showPage(pageId) {
+
+            const pages = document.querySelectorAll(".page");
+
+            pages.forEach(function(page) {
+                page.classList.remove("active");
+            });
+
+            document.getElementById(pageId).classList.add("active");
+
+            window.scrollTo(0, 0);
+        }
+
+    </script>
+
+</body>
+</html>
